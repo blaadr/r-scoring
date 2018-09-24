@@ -25,7 +25,7 @@ test$survived <- as.factor(test$survived)
 conf <- confusionMatrix(data = test$prediction, reference = test$survived)
 conf$byClass["Sensitivity"]
 conf$byClass["Specificity"]
-
+;
 tree <- rpart(survived ~ pclass, data = train, method = "class") 
 test$prediction <- predict(tree, test, type = "class")
 conf <- confusionMatrix(data = test$prediction, reference = test$survived)
